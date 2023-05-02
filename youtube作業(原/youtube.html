@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube</title>
+    <link rel="icon" href="./images/youtube.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 50px;
+            padding: 30px;
+        }
+
+        #menu.hover{
+            cursor: pointer;
+        }
+
+        main {
+            height: calc(100vh - 70px);
+            display: flex;
+            background-color: #f9f9f9;
+        }
+
+        .side-bar {
+            height: 100%;
+            width: 17%;
+            background-color: white;
+            overflow-y: hidden;
+            
+        } 
+
+        .left {
+            display: flex;
+            align-items: center;
+        }
+
+        .left #menu {
+            padding: 0 7px;
+            cursor: pointer;
+        }
+
+        
+        
+
+        .search center{
+            border-radius: 10xp;
+            border: 4px solid ;
+        }
+
+        .search form {
+            display: block;
+            border: 1px solid #ddd;
+            height: 5px;
+            
+        }
+
+        .search input {
+            width: 600px;
+            height: 50px;
+            border: 1px ;
+            font-size: 16px;
+            border-radius: 40px 0 0 40px;
+            box-shadow: inset 0 1px 2px;
+            padding: 0px 4px 0px 16px;
+            
+        }
+
+        
+
+        .search button {
+            border: 1px ;
+            border-radius: 0 40px 40px 0;
+            cursor: pointer;
+            height: 50px;
+            width: 64px;
+            margin: -5px;
+        }
+
+        
+
+        .material-icons {
+            color: rgb(100, 100, 100);
+            cursor: pointer;
+        }
+
+        .menu {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+            margin-top: 15px;
+        }
+
+        .menu-link {
+            display: flex;
+            align-items: center;
+            padding: 12px 25px;
+        }
+
+        .menu-link span {
+            margin-left: 15px;
+        }
+        
+        .menu-link:hover {
+            background: #e5e5e5;
+            cursor: pointer;
+        }
+
+        .active {
+            background: #e5e5e5;
+        }
+
+        hr {
+            height: 1px;
+            background-color: #e5e5e5;
+            border: none;
+        }
+
+        .content {
+            background-color: #f9f9f9;
+            width: 100%;
+            height: 100%;
+            padding: 15px 15px;
+            border-top: 1px solid #ddd;
+            overflow-y: scroll;
+        }
+
+        .videos {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .video {
+            width: 270px;
+            margin-bottom: 30px;
+            
+        }
+
+        .thumbnail {
+            width: 100%;
+            height: 170px;
+        }
+
+        .thumbnail img {
+            object-fit: cover;
+            height: 94%;
+            width: 100%;
+            border-radius: 10%;
+        }
+
+        .author img {
+            object-fit: cover;
+            border-radius: 50%;
+            height: 40px;
+            width: 40px;
+            margin-right: 10px;
+        }
+
+        .details {
+            display: flex;
+        }
+
+        .title {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .title h3 {
+            color: rgb(3, 3, 3);
+            line-height: 18px;
+            font-size: 16px;
+            margin-bottom: 6px;
+        }
+        
+        .title a,
+        span {
+            text-decoration: none;
+            color: rgb(96, 96, 96);
+            font-size: 16px;
+        }
+
+        .login{
+            font-size: 20px;
+            margin-right: 0;
+        }
+        p{
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        
+        <div class="logo left">
+        
+        <img src="./images/menu-burger.png" width="40px" height="30px" id="menu">
+        
+        <a href="../新增資料夾/666.html">
+            <img src="https://www.freecodecamp.org/news/content/images/2022/01/yt-logo.png" width="160%" height="160%">
+        </a>
+        
+        </div>
+    
+        <div class="search center">
+                <input type="text" placeholder="搜尋" >
+                <button>
+                    <span class="material-symbols-outlined" style="margin-bottom: 12px;">search</span>
+                </button>
+                <span class="material-symbols-outlined" >mic</span>
+        </div>
+        
+        <div class="login">
+            <table>
+                <tr>
+                    <td><i class="material-icons"><img src="./images/more.png"></i></td>
+                    
+                    <td><img src="./images/user-interface.png" width="30px" height="30px"></td>
+                    <td >登入</td>
+                </tr>
+            </table>
+        </div>
+    </header>
+    
+    <main>
+        <div class="side-bar">
+            <div class="menu">
+                <a class="menu-link">
+                    
+                <span class="material-symbols-outlined">home 首頁</span>
+                </a>
+
+                <a class="menu-link">
+                <img src="./images/youtube-shorts-logo-15251.png" width="30px" height="30px" style="margin-left: 12px;"><span style="font-size: 20px;">Shorts</span>
+                </a>
+
+                <a class="menu-link">
+                <span class="material-symbols-outlined">
+                    subscriptions 訂閱內容</span>
+                </a>
+            </div>
+
+            <hr>
+
+            <a class="menu-link">
+                <span class="material-symbols-outlined">
+                    video_library 媒體庫
+                </span>
+            </a>
+
+            <a class="menu-link">
+                <span class="material-symbols-outlined">history 觀看紀錄</span>
+            </a>
+
+            <hr>
+            <p>登入帳戶即可對影片表示喜歡、發布留言及訂閱頻道。</p>
+            
+        </div>
+        <div class="content">
+            <div class="videos">
+                <!-- 插入影片 -->
+                <div class="video">
+                    <div class="thumbnail">
+                        <a href="https://www.youtube.com/watch?v=X7vQGNQIPT4&t=30s">
+                        <img src="https://i.ytimg.com/vi/X7vQGNQIPT4/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDEQ1NROpQsI0AXdRFqk0Nb9LNxfg">
+                        </a>
+                    </div>
+
+                    <div class="details">
+                        <div class="author">
+                            <a href="https://www.youtube.com/@Kusdream">
+                            <img src="https://yt3.ggpht.com/ytc/AGIKgqMMpdBnj3A0xhp_1FYNYOzxIN6E1ZILUnecKHyRVg=s68-c-k-c0x00ffffff-no-rj" >
+                        </a>
+                        </div>
+
+                        <div class="title">
+                            <h3>
+                                🍅法國人吃從小到大都沒看過的台灣水果🤤？！火龍果、釋迦、百香果讓法國人超驚豔！
+                            </h3>
+                            <a href="https://www.youtube.com/@Kusdream">
+                                    Ku's dream酷的夢-
+                            </a>
+                                <span> 觀看次數102萬次 • 8天前 </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video">
+                    <div class="thumbnail">
+                        <a href="https://www.youtube.com/watch?v=Il5PuIoCrbQ">
+                        <img src="https://i.ytimg.com/vi/Il5PuIoCrbQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAqUIomaJZil0XPKLFHof4PXC84bA" alt="" />
+                        </a>
+                    </div>
+
+                    <div class="details">
+                        <div class="author">
+                            <a href="https://www.youtube.com/@rayduenglish">
+                            <img src="https://yt3.ggpht.com/ytc/AGIKgqPyKbE04dUhZ-k0OULcMWOqGCGhqD4mQud08Wj6RA=s68-c-k-c0x00ffffff-no-rj" >
+                            </a>
+                        </div>
+
+                        <div class="title">
+                            <h3>
+                            在杜拜被一晚要價2萬的民宿房東放鳥!? 阿滴現場爆氣! ft. HOOK @helloiamhook
+                            </h3>
+                            <a href="https://www.youtube.com/@rayduenglish">
+                                    阿滴英文
+                            </a>
+                                <span> 觀看次數78萬次 • 6天前 </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="video">
+                    <div class="thumbnail">
+                        <a href="https://www.youtube.com/watch?v=xbYnx4_k-AU">
+                        <img src="https://i.ytimg.com/vi/xbYnx4_k-AU/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD3xrGtWjnV4CIq1uOgToS8tEUqJQ">
+                    </a>
+                    </div>
+
+                    <div class="details">
+                        <div class="author">
+                            <a href="https://www.youtube.com/@three_muggles">
+                            <img src="https://yt3.ggpht.com/ytc/AGIKgqP2u_i4ty4P4DC2r1RC_-N95iXfRKbtJc3khM6BXw=s68-c-k-c0x00ffffff-no-rj">
+                        </a>
+                        </div>
+
+                        <div class="title">
+                            <h3>
+                                看眼睛猜日本動漫角色！這幾個角色被認成派大星、阿ㄆ一ㄚˇ和旅行青蛙？只看眼睛你猜得出來嗎？｜麻瓜街訪
+                            </h3>
+                            <a href="https://www.youtube.com/@three_muggles">
+                                    三個麻瓜
+                            </a>
+                                <span> 觀看次數6.9萬次 • 8天前 </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video">
+                    <div class="thumbnail">
+                        <a href="https://www.youtube.com/watch?v=JVamUJDNs2w">
+                        <img src="https://i.ytimg.com/vi/JVamUJDNs2w/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA7yeIW5dFp0iEBr58jf1UtW4zrkA" >
+                        </a>
+                    </div>
+
+                    <div class="details">
+                        <div class="author">
+                            <a href="https://www.youtube.com/@haileymocaixi">
+                            <img src="https://yt3.ggpht.com/ytc/AGIKgqNcN56tCgml0NcAqgZyUtqVnbuKh2d0680wVV1B=s68-c-k-c0x00ffffff-no-rj" >
+                            </a>
+                        </div>
+
+                        <div class="title">
+                            <h3>
+                                【美國人羨慕死台灣的小7！】米其林餐點、自熱火鍋、果汁吧 😲 爸媽大吃一驚
+                            </h3>
+                            <a href="https://www.youtube.com/@haileymocaixi">
+                                莫彩曦Hailey
+                            </a>
+                                <span> 觀看次數：75萬次 • 1 天前 </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="video">
+                    <div class="thumbnail">
+                        <a href="https://www.youtube.com/watch?v=X7vQGNQIPT4&t=30s">
+                        <img src="https://i.ytimg.com/vi/X7vQGNQIPT4/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDEQ1NROpQsI0AXdRFqk0Nb9LNxfg">
+                        </a>
+                    </div>
+
+                    <div class="details">
+                        <div class="author">
+                            <a href="https://www.youtube.com/@Kusdream">
+                            <img src="https://yt3.ggpht.com/ytc/AGIKgqMMpdBnj3A0xhp_1FYNYOzxIN6E1ZILUnecKHyRVg=s68-c-k-c0x00ffffff-no-rj" >
+                        </a>
+                        </div>
+
+                        <div class="title">
+                            <h3>
+                                🍅法國人吃從小到大都沒看過的台灣水果🤤？！火龍果、釋迦、百香果讓法國人超驚豔！
+                            </h3>
+                            <a href="https://www.youtube.com/@Kusdream">
+                                    Ku's dream酷的夢-
+                            </a>
+                                <span> 觀看次數102萬次 • 8天前 </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video">
+                    <div class="thumbnail">
+                        <a href="https://www.youtube.com/watch?v=Il5PuIoCrbQ">
+                        <img src="https://i.ytimg.com/vi/Il5PuIoCrbQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAqUIomaJZil0XPKLFHof4PXC84bA" alt="" />
+                        </a>
+                    </div>
+
+                    <div class="details">
+                        <div class="author">
+                            <a href="https://www.youtube.com/@rayduenglish">
+                            <img src="https://yt3.ggpht.com/ytc/AGIKgqPyKbE04dUhZ-k0OULcMWOqGCGhqD4mQud08Wj6RA=s68-c-k-c0x00ffffff-no-rj" >
+                            </a>
+                        </div>
+
+                        <div class="title">
+                            <h3>
+                            在杜拜被一晚要價2萬的民宿房東放鳥!? 阿滴現場爆氣! ft. HOOK @helloiamhook
+                            </h3>
+                            <a href="https://www.youtube.com/@rayduenglish">
+                                    阿滴英文
+                            </a>
+                                <span> 觀看次數78萬次 • 6天前 </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="video">
+                    <div class="thumbnail">
+                        <a href="https://www.youtube.com/watch?v=xbYnx4_k-AU">
+                        <img src="https://i.ytimg.com/vi/xbYnx4_k-AU/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD3xrGtWjnV4CIq1uOgToS8tEUqJQ">
+                    </a>
+                    </div>
+
+                    <div class="details">
+                        <div class="author">
+                            <a href="https://www.youtube.com/@three_muggles">
+                            <img src="https://yt3.ggpht.com/ytc/AGIKgqP2u_i4ty4P4DC2r1RC_-N95iXfRKbtJc3khM6BXw=s68-c-k-c0x00ffffff-no-rj">
+                        </a>
+                        </div>
+
+                        <div class="title">
+                            <h3>
+                                看眼睛猜日本動漫角色！這幾個角色被認成派大星、阿ㄆ一ㄚˇ和旅行青蛙？只看眼睛你猜得出來嗎？｜麻瓜街訪
+                            </h3>
+                            <a href="https://www.youtube.com/@three_muggles">
+                                    三個麻瓜
+                            </a>
+                                <span> 觀看次數6.9萬次 • 8天前 </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video">
+                    <div class="thumbnail">
+                        <a href="https://www.youtube.com/watch?v=JVamUJDNs2w">
+                        <img src="https://i.ytimg.com/vi/JVamUJDNs2w/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA7yeIW5dFp0iEBr58jf1UtW4zrkA" >
+                        </a>
+                    </div>
+
+                    <div class="details">
+                        <div class="author">
+                            <a href="https://www.youtube.com/@haileymocaixi">
+                            <img src="https://yt3.ggpht.com/ytc/AGIKgqNcN56tCgml0NcAqgZyUtqVnbuKh2d0680wVV1B=s68-c-k-c0x00ffffff-no-rj" >
+                            </a>
+                        </div>
+
+                        <div class="title">
+                            <h3>
+                                【美國人羨慕死台灣的小7！】米其林餐點、自熱火鍋、果汁吧 😲 爸媽大吃一驚
+                            </h3>
+                            <a href="https://www.youtube.com/@haileymocaixi">
+                                莫彩曦Hailey
+                            </a>
+                                <span> 觀看次數：75萬次 • 1 天前 </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="video">
+                    <div class="thumbnail">
+                        <a href="https://www.youtube.com/watch?v=X7vQGNQIPT4&t=30s">
+                        <img src="https://i.ytimg.com/vi/X7vQGNQIPT4/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDEQ1NROpQsI0AXdRFqk0Nb9LNxfg">
+                        </a>
+                    </div>
+
+                    <div class="details">
+                        <div class="author">
+                            <a href="https://www.youtube.com/@Kusdream">
+                            <img src="https://yt3.ggpht.com/ytc/AGIKgqMMpdBnj3A0xhp_1FYNYOzxIN6E1ZILUnecKHyRVg=s68-c-k-c0x00ffffff-no-rj" >
+                        </a>
+                        </div>
+
+                        <div class="title">
+                            <h3>
+                                🍅法國人吃從小到大都沒看過的台灣水果🤤？！火龍果、釋迦、百香果讓法國人超驚豔！
+                            </h3>
+                            <a href="https://www.youtube.com/@Kusdream">
+                                    Ku's dream酷的夢-
+                            </a>
+                                <span> 觀看次數102萬次 • 8天前 </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video">
+                    <div class="thumbnail">
+                        <a href="https://www.youtube.com/watch?v=Il5PuIoCrbQ">
+                        <img src="https://i.ytimg.com/vi/Il5PuIoCrbQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAqUIomaJZil0XPKLFHof4PXC84bA" alt="" />
+                        </a>
+                    </div>
+
+                    <div class="details">
+                        <div class="author">
+                            <a href="https://www.youtube.com/@rayduenglish">
+                            <img src="https://yt3.ggpht.com/ytc/AGIKgqPyKbE04dUhZ-k0OULcMWOqGCGhqD4mQud08Wj6RA=s68-c-k-c0x00ffffff-no-rj" >
+                            </a>
+                        </div>
+
+                        <div class="title">
+                            <h3>
+                            在杜拜被一晚要價2萬的民宿房東放鳥!? 阿滴現場爆氣! ft. HOOK @helloiamhook
+                            </h3>
+                            <a href="https://www.youtube.com/@rayduenglish">
+                                    阿滴英文
+                            </a>
+                                <span> 觀看次數78萬次 • 6天前 </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="video">
+                    <div class="thumbnail">
+                        <a href="https://www.youtube.com/watch?v=xbYnx4_k-AU">
+                        <img src="https://i.ytimg.com/vi/xbYnx4_k-AU/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD3xrGtWjnV4CIq1uOgToS8tEUqJQ">
+                    </a>
+                    </div>
+
+                    <div class="details">
+                        <div class="author">
+                            <a href="https://www.youtube.com/@three_muggles">
+                            <img src="https://yt3.ggpht.com/ytc/AGIKgqP2u_i4ty4P4DC2r1RC_-N95iXfRKbtJc3khM6BXw=s68-c-k-c0x00ffffff-no-rj">
+                        </a>
+                        </div>
+
+                        <div class="title">
+                            <h3>
+                                看眼睛猜日本動漫角色！這幾個角色被認成派大星、阿ㄆ一ㄚˇ和旅行青蛙？只看眼睛你猜得出來嗎？｜麻瓜街訪
+                            </h3>
+                            <a href="https://www.youtube.com/@three_muggles">
+                                    三個麻瓜
+                            </a>
+                                <span> 觀看次數6.9萬次 • 8天前 </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video">
+                    <div class="thumbnail">
+                        <a href="https://www.youtube.com/watch?v=JVamUJDNs2w">
+                        <img src="https://i.ytimg.com/vi/JVamUJDNs2w/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA7yeIW5dFp0iEBr58jf1UtW4zrkA" >
+                        </a>
+                    </div>
+
+                    <div class="details">
+                        <div class="author">
+                            <a href="https://www.youtube.com/@haileymocaixi">
+                            <img src="https://yt3.ggpht.com/ytc/AGIKgqNcN56tCgml0NcAqgZyUtqVnbuKh2d0680wVV1B=s68-c-k-c0x00ffffff-no-rj" >
+                            </a>
+                        </div>
+
+                        <div class="title">
+                            <h3>
+                                【美國人羨慕死台灣的小7！】米其林餐點、自熱火鍋、果汁吧 😲 爸媽大吃一驚
+                            </h3>
+                            <a href="https://www.youtube.com/@haileymocaixi">
+                                莫彩曦Hailey
+                            </a>
+                                <span> 觀看次數：75萬次 • 1 天前 </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="video">
+                    <div class="thumbnail">
+                        <a href="https://www.youtube.com/watch?v=X7vQGNQIPT4&t=30s">
+                        <img src="https://i.ytimg.com/vi/X7vQGNQIPT4/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDEQ1NROpQsI0AXdRFqk0Nb9LNxfg">
+                        </a>
+                    </div>
+
+                    <div class="details">
+                        <div class="author">
+                            <a href="https://www.youtube.com/@Kusdream">
+                            <img src="https://yt3.ggpht.com/ytc/AGIKgqMMpdBnj3A0xhp_1FYNYOzxIN6E1ZILUnecKHyRVg=s68-c-k-c0x00ffffff-no-rj" >
+                        </a>
+                        </div>
+
+                        <div class="title">
+                            <h3>
+                                🍅法國人吃從小到大都沒看過的台灣水果🤤？！火龍果、釋迦、百香果讓法國人超驚豔！
+                            </h3>
+                            <a href="https://www.youtube.com/@Kusdream">
+                                    Ku's dream酷的夢-
+                            </a>
+                                <span> 觀看次數102萬次 • 8天前 </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video">
+                    <div class="thumbnail">
+                        <a href="https://www.youtube.com/watch?v=Il5PuIoCrbQ">
+                        <img src="https://i.ytimg.com/vi/Il5PuIoCrbQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAqUIomaJZil0XPKLFHof4PXC84bA" alt="" />
+                        </a>
+                    </div>
+
+                    <div class="details">
+                        <div class="author">
+                            <a href="https://www.youtube.com/@rayduenglish">
+                            <img src="https://yt3.ggpht.com/ytc/AGIKgqPyKbE04dUhZ-k0OULcMWOqGCGhqD4mQud08Wj6RA=s68-c-k-c0x00ffffff-no-rj" >
+                            </a>
+                        </div>
+
+                        <div class="title">
+                            <h3>
+                            在杜拜被一晚要價2萬的民宿房東放鳥!? 阿滴現場爆氣! ft. HOOK @helloiamhook
+                            </h3>
+                            <a href="https://www.youtube.com/@rayduenglish">
+                                    阿滴英文
+                            </a>
+                                <span> 觀看次數78萬次 • 6天前 </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="video">
+                    <div class="thumbnail">
+                        <a href="https://www.youtube.com/watch?v=xbYnx4_k-AU">
+                        <img src="https://i.ytimg.com/vi/xbYnx4_k-AU/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD3xrGtWjnV4CIq1uOgToS8tEUqJQ">
+                    </a>
+                    </div>
+
+                    <div class="details">
+                        <div class="author">
+                            <a href="https://www.youtube.com/@three_muggles">
+                            <img src="https://yt3.ggpht.com/ytc/AGIKgqP2u_i4ty4P4DC2r1RC_-N95iXfRKbtJc3khM6BXw=s68-c-k-c0x00ffffff-no-rj">
+                        </a>
+                        </div>
+
+                        <div class="title">
+                            <h3>
+                                看眼睛猜日本動漫角色！這幾個角色被認成派大星、阿ㄆ一ㄚˇ和旅行青蛙？只看眼睛你猜得出來嗎？｜麻瓜街訪
+                            </h3>
+                            <a href="https://www.youtube.com/@three_muggles">
+                                    三個麻瓜
+                            </a>
+                                <span> 觀看次數6.9萬次 • 8天前 </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video">
+                    <div class="thumbnail">
+                        <a href="https://www.youtube.com/watch?v=JVamUJDNs2w">
+                        <img src="https://i.ytimg.com/vi/JVamUJDNs2w/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA7yeIW5dFp0iEBr58jf1UtW4zrkA" >
+                        </a>
+                    </div>
+
+                    <div class="details">
+                        <div class="author">
+                            <a href="https://www.youtube.com/@haileymocaixi">
+                            <img src="https://yt3.ggpht.com/ytc/AGIKgqNcN56tCgml0NcAqgZyUtqVnbuKh2d0680wVV1B=s68-c-k-c0x00ffffff-no-rj" >
+                            </a>
+                        </div>
+
+                        <div class="title">
+                            <h3>
+                                【美國人羨慕死台灣的小7！】米其林餐點、自熱火鍋、果汁吧 😲 爸媽大吃一驚
+                            </h3>
+                            <a href="https://www.youtube.com/@haileymocaixi">
+                                莫彩曦Hailey
+                            </a>
+                                <span> 觀看次數：75萬次 • 1 天前 </span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>
